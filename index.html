@@ -392,6 +392,9 @@
     let msg = `Olá! Meu nome é ${nome}. \nGostaria de saber o valor do Produto: ${produto}\nCidade: ${endereco}`;
     let url = "https://wa.me/5563992110692?text=" + encodeURIComponent(msg);
     window.open(url, "_blank");
+
+    // 🔹 limpa os campos após enviar
+    document.getElementById("pedidoForm").reset();
   }
   </script>
 
