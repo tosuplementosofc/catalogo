@@ -366,6 +366,35 @@
 
   </main>
 
+  <h2 class="text-2xl font-bold text-center mt-10 mb-6">Não encontrou o produto?<br>📋 Solicite seu orçamento aqui!</h2>
+
+  <form onsubmit="enviarPedido(); return false;" class="max-w-md mx-auto bg-gray-800 p-6 rounded-xl text-white">
+    <label class="block mb-2">Nome:</label>
+    <input type="text" id="nome" class="w-full p-2 mb-4 text-black rounded" required>
+
+    <label class="block mb-2">Produto:</label>
+    <input type="text" id="produto" class="w-full p-2 mb-4 text-black rounded" required>
+
+    <label class="block mb-2">Cidade:</label>
+    <input type="text" id="endereco" class="w-full p-2 mb-4 text-black rounded" required>
+
+    <button type="submit" class="w-full bg-green-600 py-2 rounded hover:bg-green-700">
+      Enviar pelo WhatsApp
+    </button>
+  </form>
+
+  <script>
+  function enviarPedido() {
+    let nome = document.getElementById("nome").value;
+    let produto = document.getElementById("produto").value;
+    let endereco = document.getElementById("endereco").value;
+
+    let msg = `Olá! Meu nome é ${nome}. \nGostaria de saber o valor do Produto: ${produto}\nCidade: ${endereco}`;
+    let url = "https://wa.me/5563992110692?text=" + encodeURIComponent(msg);
+    window.open(url, "_blank");
+  }
+  </script>
+
   <!-- Rodapé -->
   <footer class="bg-gray-900 text-white text-center p-6 mt-10">
     <p>📍 Porto Nacional – TO</p>
@@ -380,4 +409,3 @@
 
 </body>
 </html>
-
